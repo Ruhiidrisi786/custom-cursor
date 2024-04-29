@@ -2,26 +2,27 @@ let main = document.querySelector("#main")
 let cursor = document.querySelector("#cursor");
 let imgBox = document.querySelector(".img")
 
-main.addEventListener("mousemove", (elem) =>{
+main.addEventListener("mousemove", (dets) =>{
     gsap.to(cursor, {
-        x: elem.x,
-        y: elem.y,
-        // ease: 'ease out',
-        duration: 1,
+        x: dets.x,
+        y: dets.y,
+        duration: 0.5,
     })
 })
 
-imgBox.addEventListener("mouseenter", (elem) =>{
+imgBox.addEventListener("mouseenter", () =>{
+    cursor.innerHTML = "View More",
     gsap.to(cursor, {
-        x:elem.x,
-        y:elem.y,
         scale: 4,
     })
 })
-imgBox.addEventListener("mouseleave", (elem) =>{
+imgBox.addEventListener("mouseleave", () =>{
     gsap.to(cursor, {
-        x:elem.x,
-        y:elem.y,
+        // x:elem.x,
+        // y:elem.y,
         scale: 1,
     })
 })
+
+
+
